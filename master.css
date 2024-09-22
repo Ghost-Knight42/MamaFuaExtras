@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hookup App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Hookup App</h1>
+    </header>
+    <main>
+        <section id="auth">
+            <div id="loginFormContainer">
+                <h2>Login</h2>
+                <form id="loginForm" action="/login" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p><a href="#" onclick="showForgotPasswordForm()">Forgot Password?</a></p>
+            </div>
+            <div id="forgotPasswordFormContainer" style="display:none;">
+                <h2>Recover Password</h2>
+                <form id="forgotPasswordForm" action="/recover" method="post">
+                    <input type="text" name="identifier" placeholder="Email or Mobile Number" required>
+                    <button type="submit">Recover Password</button>
+                </form>
+                <p><a href="#" onclick="showLoginForm()">Back to Login</a></p>
+            </div>
+        </section>
+        <section id="profile" style="display:none;">
+            <h2>Your Profile</h2>
+            <p id="profileInfo"></p>
+            <button onclick="logout()">Logout</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+form input, form button {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+section {
+    margin: 1em 0;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#forgotPasswordFormContainer {
+    margin-top: 1em;
+}
+
+#errorMessage {
+    color: red;
+}
+
+#successMessage {
+    color: green;
+}body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+form input {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    width: 100%;
+}
+
+form button {
+    padding: 0.5em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+section {
+    margin: 1em 0;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#forgotPasswordFormContainer {
+    margin-top: 1em;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+form input {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.5em;
+}
+
+form button {
+    padding: 0.5em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+section {
+    margin: 1em 0;
+}body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #311B92;
+    color: #E040FB;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    background-color: #311B92;
+    color: #4A148C;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+button {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input[type="text"], input[type="password"] {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+a {
+    color: #E040FB;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img#profilePhoto {
+    max-width: 150px;
+    border-radius: 50%;
+}body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #311B92;
+    color: #E040FB;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    background-color: #311B92;
+    color: #4A148C;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+button {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+a {
+    color: #E040FB;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img#profilePhoto {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+#profileList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.profileCard {
+    background-color: #4A148C;
+    color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    width: calc(33% - 2em);
+    box-sizing: border-box;
+}
+
+.profileCard img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.profileCard button {
+    background-color: #E040FB;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.profileCard button:hover {
+    opacity: 0.8;
+}
+
+
